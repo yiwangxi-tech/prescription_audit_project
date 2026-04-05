@@ -1,0 +1,208 @@
+{
+  "input_json": "/home/tr/Data_folder/LLM_for_medication/llm_review_data/prescription_benchmark.json",
+  "output_root": "/home/tr/Data_folder/LLM_for_medication/llm_review_outputs",
+  "request_interval": 0.5,
+  "max_retry": 2,
+  "max_tokens": 512,
+  "temperature": 0,
+  "local_models": {
+    "DeepSeek-R1-Distill-Qwen-7B": {
+      "path": "/home/tr/Data_folder/Modelscope/DeepSeek-R1-Distill-Qwen-7B"
+    },
+    "DeepSeek-R1-Distill-Qwen-14B": {
+      "path": "/home/tr/Data_folder/Modelscope/DeepSeek-R1-Distill-Qwen-14B"
+    },
+    "Qwen-3-8B": {
+      "path": "/home/tr/Data_folder/Modelscope/Qwen-3-8B"
+    },
+    "Mixtral-8x7B-v0.1-GPTQ": {
+      "path": "/home/tr/Data_folder/Modelscope/Mixtral-8x7B-v0.1-GPTQ"
+    },
+    "internlm2-7b": {
+      "path": "/home/tr/Data_folder/Modelscope/internlm2-7b"
+    },
+    "Meta-Llama-3-8B": {
+      "path": "/home/tr/Data_folder/Modelscope/LLM-Research/Meta-Llama-3-8B"
+    },
+    "Meta-Llama-3.1-8B-Instruct": {
+      "path": "/home/tr/Data_folder/Modelscope/LLM-Research/Meta-Llama-3.1-8B-Instruct"
+    },
+    "Qwen3-32B": {
+      "path": "/home/tr/Data_folder/Modelscope/Qwen/Qwen3-32B"
+    },
+    "glm-4-9b-chat": {
+      "path": "/home/tr/Data_folder/Modelscope/ZhipuAI/glm-4-9b-chat"
+    },
+    "ERNIE-4.5-21b-A3B-PT": {
+      "path": "/home/tr/Data_folder/Modelscope/Baidu/ERNIE-4.5-21b-A3B-PT"
+    },
+    "Baichuan-M2-32B": {
+      "path": "/home/tr/Data_folder/Modelscope/Baichuan/Baichuan-M2-32B"
+    }
+  },
+  "local_server_by_path": {
+    "/home/tr/Data_folder/Modelscope/DeepSeek-R1-Distill-Qwen-7B": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/DeepSeek-R1-Distill-Qwen-14B": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/Qwen-3-8B": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/Mixtral-8x7B-v0.1-GPTQ": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/internlm2-7b": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/LLM-Research/Meta-Llama-3-8B": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/LLM-Research/Meta-Llama-3.1-8B-Instruct": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/Qwen/Qwen3-32B": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/ZhipuAI/glm-4-9b-chat": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/Baidu/ERNIE-4.5-21b-A3B-PT": "http://127.0.0.1:8001/v1",
+    "/home/tr/Data_folder/Modelscope/Baichuan/Baichuan-M2-32B": "http://127.0.0.1:8001/v1"
+  },
+  "remote_models": {
+    "Qwen3.5-27B-Remote": {
+      "base_url": "http://10.66.0.15:8000/v1",
+      "api_key": "vllm-token",
+      "model": "Qwen3.5-27B",
+      "stream": false,
+      "extra_body": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    }
+  },
+  "api_models": {
+    "MiniMax-M2.7": {
+      "base_url": "https://www.aiping.cn/api/v1",
+      "api_key": "QC-cb75e1e0bf1064a83bdd9152a301f5c9-d474b81b95c421247e7008e023bc1cbd",
+      "model": "MiniMax-M2.7",
+      "stream": true,
+      "extra_body": {
+        "provider": {
+          "only": [],
+          "order": [],
+          "sort": null,
+          "input_price_range": [],
+          "output_price_range": [],
+          "input_length_range": [],
+          "output_length_range": [],
+          "throughput_range": [],
+          "latency_range": []
+        }
+      }
+    },
+    "Qwen3.5-Plus": {
+      "base_url": "https://www.aiping.cn/api/v1",
+      "api_key": "QC-cb75e1e0bf1064a83bdd9152a301f5c9-d474b81b95c421247e7008e023bc1cbd",
+      "model": "Qwen3.5-Plus",
+      "stream": true,
+      "extra_body": {
+        "provider": {
+          "only": [],
+          "order": [],
+          "sort": null,
+          "input_price_range": [],
+          "output_price_range": [],
+          "input_length_range": [],
+          "output_length_range": [],
+          "throughput_range": [],
+          "latency_range": []
+        }
+      }
+    },
+    "DeepSeek-V3.2": {
+      "base_url": "https://www.aiping.cn/api/v1",
+      "api_key": "QC-cb75e1e0bf1064a83bdd9152a301f5c9-d474b81b95c421247e7008e023bc1cbd",
+      "model": "DeepSeek-V3.2",
+      "stream": true,
+      "extra_body": {
+        "provider": {
+          "only": [],
+          "order": [],
+          "sort": null,
+          "input_price_range": [],
+          "output_price_range": [],
+          "input_length_range": [],
+          "output_length_range": [],
+          "throughput_range": [],
+          "latency_range": []
+        }
+      }
+    },
+    "Kimi-K2.5": {
+      "base_url": "https://www.aiping.cn/api/v1",
+      "api_key": "QC-cb75e1e0bf1064a83bdd9152a301f5c9-d474b81b95c421247e7008e023bc1cbd",
+      "model": "Kimi-K2.5",
+      "stream": true,
+      "extra_body": {
+        "provider": {
+          "only": [],
+          "order": [],
+          "sort": null,
+          "input_price_range": [],
+          "output_price_range": [],
+          "input_length_range": [],
+          "output_length_range": [],
+          "throughput_range": [],
+          "latency_range": []
+        }
+      }
+    },
+    "gpt-4.1-mini": {
+      "base_url": "https://api.apiyi.com/v1",
+      "api_key": "sk-mGYDnO132v0qe1sU6fDa38E1337a4f2a9c505eF90307Ab47",
+      "model": "gpt-4.1-mini",
+      "stream": false,
+      "extra_body": {}
+    },
+    "claude-3-7-sonnet-20250219": {
+      "base_url": "https://api.apiyi.com/v1",
+      "api_key": "sk-mGYDnO132v0qe1sU6fDa38E1337a4f2a9c505eF90307Ab47",
+      "model": "claude-3-7-sonnet-20250219",
+      "stream": false,
+      "extra_body": {}
+    }
+  },
+  "model_extra_body": {
+    "DeepSeek-R1-Distill-Qwen-7B": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "DeepSeek-R1-Distill-Qwen-14B": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "Qwen-3-8B": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "Qwen3-32B": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "Qwen3.5-27B-Remote": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    }
+  },
+  "models_to_run": [
+    "Qwen3.5-27B-Remote",
+    "DeepSeek-R1-Distill-Qwen-7B",
+    "DeepSeek-R1-Distill-Qwen-14B",
+    "Mixtral-8x7B-v0.1-GPTQ",
+    "Qwen-3-8B",
+    "Qwen3-32B",
+    "internlm2-7b",
+    "Meta-Llama-3-8B",
+    "Meta-Llama-3.1-8B-Instruct",
+    "glm-4-9b-chat",
+    "ERNIE-4.5-21b-A3B-PT",
+    "Baichuan-M2-32B",
+    "MiniMax-M2.7",
+    "Qwen3.5-Plus",
+    "Kimi-K2.5",
+    "DeepSeek-V3.2",
+    "gpt-4.1-mini",
+    "claude-3-7-sonnet-20250219"
+ ]
+}
